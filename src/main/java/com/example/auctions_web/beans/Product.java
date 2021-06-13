@@ -16,7 +16,6 @@ public class Product {
     private String description;
     private double initialPrice;
     private double prepaid; //pago anticipado que debe paga el customer para poder realizar el push
-    private Byte[] images;
     private Date auctionPeriod;
     @ManyToOne
     @JoinColumn(name = "category_product_fk", nullable = false)
@@ -25,6 +24,8 @@ public class Product {
     private ProductStatus productStatus;
     @OneToMany(mappedBy = "product", targetEntity = Push.class)
     private List<Push> pushes = new ArrayList<>();
+    @OneToMany(mappedBy = "product", targetEntity = ProductImages.class)
+    private List<ProductImages> images = new ArrayList<>();
 
     public Product() {
     }
@@ -53,11 +54,11 @@ public class Product {
         this.description = description;
     }
 
-    public Byte[] getImages() {
+    public List<ProductImages> getImages() {
         return images;
     }
 
-    public void setImages(Byte[] images) {
+    public void setImages(List<ProductImages> images) {
         this.images = images;
     }
 
@@ -112,14 +113,16 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", initialPrice=" + initialPrice +
                 ", prepaid=" + prepaid +
-                ", images=" + Arrays.toString(images) +
                 ", auctionPeriod=" + auctionPeriod +
                 ", productCategory=" + productCategory +
                 ", productStatus=" + productStatus +
+                ", pushes=" + pushes +
+                ", images=" + images +
                 '}';
     }
 }
