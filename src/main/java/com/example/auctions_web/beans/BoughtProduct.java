@@ -15,6 +15,14 @@ public class BoughtProduct {
     public BoughtProduct() {
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public Push getPushed_customer_product() {
         return pushed_customer_product;
     }

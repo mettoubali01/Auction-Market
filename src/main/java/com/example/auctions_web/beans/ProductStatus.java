@@ -4,4 +4,4 @@ public enum ProductStatus {
     closed,
     opened
 
-}
+ }

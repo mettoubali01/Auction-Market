@@ -2,7 +2,6 @@ package com.example.auctions_web.beans;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -12,10 +11,14 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @JoinColumn(nullable = false)
     private String name;
+    @JoinColumn(nullable = false)
     private String description;
+    @JoinColumn(nullable = false)
     private double initialPrice;
     private double prepaid; //pago anticipado que debe paga el customer para poder realizar el push
+    @Temporal(TemporalType.TIMESTAMP)
     private Date auctionPeriod;
     @ManyToOne
     @JoinColumn(name = "category_product_fk", nullable = false)
