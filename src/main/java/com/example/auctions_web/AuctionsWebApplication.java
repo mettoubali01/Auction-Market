@@ -8,6 +8,6 @@ public class AuctionsWebApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AuctionsWebApplication.class, args);
-    }
 
+    }
 }

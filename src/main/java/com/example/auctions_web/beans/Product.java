@@ -17,6 +17,7 @@ public class Product {
     private String description;
     @JoinColumn(nullable = false)
     private double initialPrice;
+    private String cityLocation;
     private double prepaid; //pago anticipado que debe paga el customer para poder realizar el push
     @Temporal(TemporalType.TIMESTAMP)
     private Date auctionPeriod;
@@ -113,6 +114,14 @@ public class Product {
         this.pushes = pushes;
     }
 
+    public String getCityLocation() {
+        return cityLocation;
+    }
+
+    public void setCityLocation(String cityLocation) {
+        this.cityLocation = cityLocation;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -120,6 +129,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", initialPrice=" + initialPrice +
+                ", cityLocation='" + cityLocation + '\'' +
                 ", prepaid=" + prepaid +
                 ", auctionPeriod=" + auctionPeriod +
                 ", productCategory=" + productCategory +
