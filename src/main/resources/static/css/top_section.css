@@ -1,0 +1,94 @@
+.top__section{
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 25px 0;
+}
+
+.top__section span{
+    display: block;
+    padding: 16px 0 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #607D8B;
+    line-height: normal;
+}
+
+.top__section h2{
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: normal;
+    padding-top: 16px;
+}
+
+/*Slideshow of categories*/
+
+.categories__container{
+    display: flex;
+    align-items: center;
+    margin: 32px auto;
+    width: 799px;
+    height: 150px;
+    max-width: 100%;
+}
+
+/*The list of categories*/
+.list__content li{
+    width: 130px;
+    list-style: none;
+    padding: 0;
+    margin: 0 4px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    transition: box-shadow ease-in-out 150ms,transform ease-in-out 150ms;
+    transition-delay: 50ms;
+    cursor: pointer;
+}
+
+.list__content li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 16px 8px;
+    text-align: center;
+}
+
+.list__content li:hover{
+    color: aqua;
+    -webkit-box-shadow: 1px 4px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 16px 0px rgba(0,0,0,0.75);
+}
+
+.list__content ul {
+    max-width: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    padding: 8px;
+}
+
+/*button the right and the left*/
+.right__button, .left__button{
+    width: 50px;
+    height: 50px;
+    flex-wrap: wrap;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.right__button:hover, .left__button:hover{
+    border: 1px rgb(37 50 90 / 10%) solid;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgb(37 50 90 / 90%);
+}
+
+.right__button span, .left__button span{
+    padding: 0;
+}
+
+.fa-chevron-left, .fa-chevron-right{
+    font-size: 30px;
+}

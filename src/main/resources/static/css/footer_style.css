@@ -1,0 +1,38 @@
+footer{
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 55px 45px;
+}
+
+.footer__container{
+    display: flex;
+    gap: 25px;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.rights__and__sign{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.rights__and__sign > span{
+    font-size: 45px;
+    font-family: "Brush Script MT", serif;
+    color: #13C1AC;
+    font-weight: bolder;
+}
+
+.website__info, .support__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.website__info li, .support__section li{
+    list-style: none;
+}
+

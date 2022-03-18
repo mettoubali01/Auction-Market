@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="footer__container" th:fragment="footer">
+            <div class="rights__and__sign">
+                <span>The Auction Spot</span>
+                <p>Copyright &copy; <span class="year">2021</span> The auction spot &copy; de sus respectivos propietarios</p>
+            </div>
 
-</body>
+            <div class="website__info">
+                <h5>Support</h5>
+                <ul>
+                    <li>Who we are?</li>
+                    <li>How works></li>
+                    <li>Jobs</li>
+                </ul>
+            </div>
+            <div class="support__section">
+                <h5>Legal</h5>
+                <ul>
+                    <li>Conditions of use</li>
+                    <li>Privacy Politics</li>
+                    <li>Cookies</li>
+                </ul>
+            </div>
+        </div>
+    </body>
 </html>
