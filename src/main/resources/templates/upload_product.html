@@ -1,0 +1,125 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload product</title>
+        <link rel="stylesheet" th:href="@{/css/footer_style.css}"
+              href="/css/footer_style.css"
+              type="text/css">
+        <link rel="stylesheet" th:href="@{/css/general.css}"
+              href="/css/general.css"
+              type="text/css">
+        <link rel="stylesheet"
+              href="css/index_header.css"
+              th:href="@{/css/index_header.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="css/upload_form.css"
+              th:href="@{/css/upload_form.css}"
+              type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'
+                crossorigin='anonymous'></script>
+    </head>
+    <body>
+        <div class="page__wrapper">
+
+            <header th:replace="fragments/header.html :: header"></header>
+
+            <main>
+                <form class="upload__product__form">
+                    <div class="category__pro__selection">
+                        <h2>What will you upload?</h2>
+                    </div>
+
+                    <div class="basic__info__section">
+                        <h2>Product Information</h2>
+
+                        <div class="name__input__container">
+                            <div class="name__input__inner_container">
+                                <label for="title">Title</label>
+                                <span class="chars__counter">0/100</span>
+                                <input id="title"
+                                       name="title"
+                                       type="text"
+                                       placeholder="In few words"
+                                       maxlength="100">
+                            </div>
+
+                            <div class="maxDateForPushing__input__inner_container">
+                                <label for="maxDate">Pushes Until</label>
+                                <input name="maxDate"
+                                       type="date"
+                                       id="maxDate">
+                            </div>
+
+                            <div class="price__input__inner_container">
+                                <label for="price">Price</label>
+                                <input name="price"
+                                       type="number"
+                                       min="0"
+                                       max="999999999"
+                                       placeholder="Final price in Euro"
+                                       id="price">
+                            </div>
+
+                            <div class="prepaid__input__inner_container">
+                                <label for="prepaid">Pre-paid price</label>
+                                <input name="price"
+                                       type="number"
+                                       min="0"
+                                       max="999999999"
+                                       placeholder="Pre-paid price in Euro"
+                                       id="prepaid">
+                            </div>
+
+                            <div class="description__input__inner_container">
+                                <label for="description">Description</label>
+                                <span class="chars__counter">0/1000</span>
+                                <textarea name="Description"
+                                          maxlength="000"
+                                          placeholder="Describe your product..."
+                                          id="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product__photos__container">
+                        <h2>Photos</h2>
+
+                        <div class="product__photos__inner_container">
+                            <div class="photo__wrapper">
+                                <label>
+                                    <input type="file" multiple="multiple">
+                                    </label>
+                                <span>Principal photo
+                                https://speckyboy.com/custom-file-upload-fields/</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="product__location__container">
+                        <h2>Where you have the product</h2>
+
+                        <div class="product__location__inner_container">
+                            <div class="map__wrapper">
+                                <span>WeGo Here</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="submit__btn">
+                        <button type="submit">
+                            Upload product
+                        </button>
+                    </div>
+                </form>
+            </main>
+
+            <div class="clear"></div>
+
+            <footer th:insert="fragments/footer.html :: footer"></footer>
+        </div>
+    </body>
+</html>

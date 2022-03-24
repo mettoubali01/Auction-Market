@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Product Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/footer_style.css}"
+              href="/css/footer_style.css"
+              type="text/css">
+        <link rel="stylesheet" th:href="@{/css/general.css}"
+              href="/css/general.css"
+              type="text/css">
+        <link rel="stylesheet"
+              href="css/index_header.css"
+              th:href="@{/css/index_header.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="css/product_info.css"
+              th:href="@{/css/product_info.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'
+                crossorigin='anonymous'></script>
+    </head>
+    <body>
+            <div class="page__wrapper">
+                <header th:replace="fragments/header.html :: header"></header>
+
+                <main>
+                    <div class="product__card">
+                        <div class="card__top__section">
+                            <h2>Product Name Eee</h2>
+                            <button class="push">Push</button>
+                        </div>
+
+                        <div class="product__image">
+                            <img src="/images/auction.png" alt="Product">
+                        </div>
+
+                        <div class="card__bottom__section">
+                            <span class="price"> <b>36.35$</b> </span>
+
+                            <p class="description">Product description Product description Product description
+                                Product description Product description Product description
+                                Product description Product description Product description</p>
+
+                            <span class="publication__date">20-05-2022</span>
+
+                            <div class="product__location">
+                                <i style='font-size:24px' class='fas'>&#xf3c5;</i>
+                                <span>Palma de Mallorca</span>
+                                <div class="map__space">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <div class="clear"></div>
+
+                <footer th:insert="fragments/footer.html :: footer"></footer>
+        </div>
+    </body>
+</html>

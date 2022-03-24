@@ -19,6 +19,9 @@
         <link rel="stylesheet" th:href="@{/css/footer_style.css}"
               href="/css/footer_style.css"
               type="text/css">
+        <link rel="stylesheet" th:href="@{/css/index.css}"
+              href="/css/index.css"
+              type="text/css">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,118 +30,108 @@
     </head>
 
     <body>
-        <header class="main__header">
-            <a class="main__header__logo">
-                <img src="images/auction.PNG" th:src="@{/images/auction.PNG}" class="web__logo" alt="website logo">
-            </a>
-            <div class="search__bar">
-                <form class="search" method="get" action="">
-                    <div class="search__wrapper">
-                        <input name="keywords" type="text" value=""
-                               placeholder="Search in all the categories"
-                               autocomplete="off"
-                               class="search__input">
-                        <svg class="Search__icon" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-width="4" d="M31.263 32.547a1.975 1.975 0 0 1 2.717 0l4.454 4.284a1.81 1.81 0 0 1 0 2.627 1.975 1.975 0 0 1-2.717 0l-4.454-4.283a1.81 1.81 0 0 1 0-2.628zm-.46-2.569c-4.988 4.797-13.072 4.797-18.06 0-4.99-4.8-4.99-12.581 0-17.38 4.988-4.797 13.072-4.797 18.06 0 4.99 4.799 4.99 12.58 0 17.38zm-2.297-2.21c3.722-3.578 3.722-9.382 0-12.961-3.72-3.577-9.747-3.577-13.466 0-3.722 3.579-3.722 9.383 0 12.962 3.72 3.576 9.747 3.576 13.466 0z"/>
-                        </svg>
-                    </div>
-                </form>
-            </div>
+        <div class="page__wrapper">
 
-            <div class="conf__section">
+            <!--The header-->
+            <header th:replace="fragments/header.html :: header"></header>
 
-                <a class="login__register__btn">
-                    <span>Login or Sign up</span>
-                </a>
+            <section class="top__section">
+                <span>The Auction Spot, The leading product auction platform. </span>
 
-                <button class="upload__btn">
-                    <i class="material-icons">add_circle_outline</i>
-                    Upload product
-                </button>
+                <h2>What product are you interested in bidding on?</h2>
 
-                <div class="dropdown">
-                    <button class="more__info__dropdwn">
-                        <i class="material-icons">person_outline</i>
-                        Username
-                        <i class="fa fa-caret-down"></i>
+                <div class="categories__container">
+                    <button class="left__button">
+                        <span><i class="fas fa-chevron-left"></i></span>
                     </button>
 
-                    <div class="dropdown__content">
-                        <a href="#">Pushes</a>
-                        <a href="#">Logout</a>
+                    <div class="list__content">
+                        <ul>
+                            <li class="categories_list_item">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">directions_bike</i>
+                                    </div>
+                                    Bike
+                                </a>
+                            </li>
+
+                            <li class="categories_list_item">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">&#xe531;</i>
+                                    </div>
+                                    Cars
+                                </a>
+                            </li>
+
+                            <li class="categories_list_item">
+                                <a>
+                                    <div class="icon_item">
+    <!--                                    <img alt="Bikes">-->
+                                        <i class="material-icons">&#xe52f;</i>
+                                    </div>
+                                    Bikes
+                                </a>
+                            </li>
+
+                            <li class="categories_list_item">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">&#xe532;</i>
+                                    </div>
+                                    Boats
+                                </a>
+                            </li>
+
+                            <li class="categories_list_item">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">games</i>
+                                    </div>
+                                    Games Console
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="right__button">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                    </button>
+                </div>
+            </section>
+
+            <main>
+                <h2>Check Our surprises</h2>
+                <p>Wou will find your objects and much more</p>
+
+                <div class="categories__wrapper">
+                    <div class="category__card">
+                        <a href="#">
+                            <img src="/images/auction.png" alt="category image">
+                            <h3>Category name</h3>
+                            <span>10.956 products</span>
+                        </a>
+                    </div>
+                    <div class="category__card">
+                        <a href="#">
+                            <img src="/images/auction.png" alt="category image">
+                            <h3>Category name</h3>
+                            <span>10.956 products</span>
+                        </a>
+                    </div>
+                    <div class="category__card">
+                        <a href="#">
+                            <img src="/images/auction.png" alt="category image">
+                            <h3>Category name</h3>
+                            <span>10.956 products</span>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </header>
+            </main>
 
-        <section class="top__section">
-            <span>The Auction Spot, The leading product auction platform. </span>
-
-            <h2>What product are you interested in bidding on?</h2>
-
-            <div class="categories__container">
-                <button class="left__button">
-                    <span><i class="fas fa-chevron-left"></i></span>
-                </button>
-
-                <div class="list__content">
-                    <ul>
-                        <li class="categories_list_item">
-                            <a>
-                                <div class="icon_item">
-                                    <i class="material-icons">directions_bike</i>
-                                </div>
-                                Bike
-                            </a>
-                        </li>
-
-                        <li class="categories_list_item">
-                            <a>
-                                <div class="icon_item">
-                                    <i class="material-icons">&#xe531;</i>
-                                </div>
-                                Cars
-                            </a>
-                        </li>
-
-                        <li class="categories_list_item">
-                            <a>
-                                <div class="icon_item">
-<!--                                    <img alt="Bikes">-->
-                                    <i class="material-icons">&#xe52f;</i>
-                                </div>
-                                Bikes
-                            </a>
-                        </li>
-
-                        <li class="categories_list_item">
-                            <a>
-                                <div class="icon_item">
-                                    <i class="material-icons">&#xe532;</i>
-                                </div>
-                                Boats
-                            </a>
-                        </li>
-
-                        <li class="categories_list_item">
-                            <a>
-                                <div class="icon_item">
-                                    <i class="material-icons">games</i>
-                                </div>
-                                Games Console
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <button class="right__button">
-                    <span><i class="fas fa-chevron-right"></i></span>
-                </button>
-            </div>
-        </section>
-
-        <h1>Home</h1>
-
-        <!-- The footer -->
-        <footer th:insert="fragments/footer.html :: footer"></footer>
+            <div class="clear"></div>
+            <!-- The footer -->
+            <footer th:insert="fragments/footer.html :: footer"></footer>
+        </div>
     </body>
 </html>

@@ -4,9 +4,20 @@
     padding: 0;
 }
 
-
-html{
-    background-color: #eeecec;
-    font-family: Wallie, Helvetica, serif;
+html, body{
+    background-color: #ECEFF1;
+    font-family: Wallie,Helvetica;
+    height: 100%;
 }
 
+/*container inside the body*/
+.page__wrapper{
+    min-height: 100%;
+    position: relative;
+}
+
+/*div btw the main and the footer*/
+.clear {
+    clear: both;
+    height: 220px;
+}

@@ -9,6 +9,7 @@
     position: -webkit-sticky;
     transition: top 150ms ease;
     height: 66px;
+    z-index: 1;
 }
 
 .web__logo{

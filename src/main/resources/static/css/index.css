@@ -1,0 +1,51 @@
+/*centring the content*/
+main {
+    width: 65%;
+    margin: 25px auto;
+}
+
+/*Styling title and the sentence*/
+main h2 {
+    font-size: 2.25rem;
+    line-height: normal;
+    font-weight: 700;
+}
+
+main h2, main p {
+    text-align: center;
+}
+
+/*The category wrapper*/
+.categories__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.category__card {
+    max-width: 50%;
+    flex: 0 0 50%;
+    padding: 0 10px 0 10px;
+    margin-bottom: 15px;
+}
+
+.category__card a {
+    background-color: #fff;
+    display: block;
+    padding: 4px 4px 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #ECEFF1;
+    color: #253238;
+    text-decoration: none;
+    transition: all .15s ease
+}
+
+.category__card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px 0 rgba(37, 50, 56, .1);
+    overflow: hidden
+}
+
+.category__card img {
+    max-width: 100%;
+}

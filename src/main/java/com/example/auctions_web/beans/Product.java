@@ -16,7 +16,7 @@ public class Product {
     @JoinColumn(nullable = false)
     private String description;
     @JoinColumn(nullable = false)
-    private double initialPrice;
+    private double price;
     private String cityLocation;
     private double prepaid; //pago anticipado que debe paga el customer para poder realizar el push
     @Temporal(TemporalType.TIMESTAMP)
@@ -83,11 +83,11 @@ public class Product {
     }
 
     public double getInitialPrice() {
-        return initialPrice;
+        return price;
     }
 
-    public void setInitialPrice(double initialPrice) {
-        this.initialPrice = initialPrice;
+    public void setInitialPrice(double price) {
+        this.price = price;
     }
 
     public ProductStatus getProductStatus() {
@@ -128,7 +128,7 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", initialPrice=" + initialPrice +
+                ", price=" + price +
                 ", cityLocation='" + cityLocation + '\'' +
                 ", prepaid=" + prepaid +
                 ", auctionPeriod=" + auctionPeriod +
