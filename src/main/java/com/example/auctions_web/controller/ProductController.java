@@ -20,4 +20,14 @@ public class ProductController {
     public String productInfo(){
         return "product_info";
     }
+
+    @GetMapping(value = "/products")
+    public String products(){
+        return "product_list";
+    }
+
+    @GetMapping(value = "/pushes")
+    public String pushes(){
+        return "pushes";
+    }
 }

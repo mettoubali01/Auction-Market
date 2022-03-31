@@ -3,6 +3,7 @@ footer{
     bottom: 0;
     position: absolute;
     width: 100%;
+    max-width: 100%;
     padding: 55px 45px;
 }
 
@@ -10,13 +11,14 @@ footer{
     display: flex;
     gap: 25px;
     justify-content: space-around;
-    height: 100px;
+    height: 200px;
+    /*100*/
 }
 
 .rights__and__sign{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-self: center;
 }
 
 .rights__and__sign > span{

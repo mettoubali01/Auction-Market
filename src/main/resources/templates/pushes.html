@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Pushes</title>
+        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
+              href="/assets/css/footer_style.css"
+              type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
+              href="/assets/css/general.css"
+              type="text/css">
+        <link rel="stylesheet"
+              href="/assets/css/index_header.css"
+              th:href="@{/assets/css/index_header.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="/assets/css/pushes.css"
+              th:href="@{/assets/css/pushes.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'
+                crossorigin='anonymous'></script>
+    </head>
+    <body>
+
+        <div class="page__wrapper">
+            <!--The header-->
+            <header th:replace="fragments/header.html :: header"></header>
+
+            <main>
+                <div>
+                    <table>
+                        <caption>My Pushes</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Push Date</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="Product Name">Estufa</td>
+                                <td data-label="Push Date">20/05/2020</td>
+                                <td data-label="State">In market</td>
+                                <td data-label="Action">
+                                    <span class="pay">
+                                        <i class='fab fa-cc-paypal'></i>
+                                    </span>
+                                    <span class="cancel">
+                                        <i class="fa fa-remove"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="Product Name">Estufa</td>
+                                <td data-label="Push Date">20/05/2020</td>
+                                <td data-label="State">In market</td>
+                                <td data-label="Action">
+                                    <span class="pay">
+                                        <i class='fab fa-cc-paypal'></i>
+                                    </span>
+                                    <span class="cancel">
+                                        <i class="fa fa-remove"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="Product Name">Estufa</td>
+                                <td data-label="Push Date">20/05/2020</td>
+                                <td data-label="State">In market</td>
+                                <td data-label="Action">
+                                    <span class="pay">
+                                        <i class='fab fa-cc-paypal'></i>
+                                    </span>
+                                    <span class="cancel">
+                                        <i class="fa fa-remove"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="Product Name">Estufa</td>
+                                <td data-label="Push Date">20/05/2020</td>
+                                <td data-label="State">In market</td>
+                                <td data-label="Action">
+                                    <span class="pay">
+                                        <i class='fab fa-cc-paypal'></i>
+                                    </span>
+                                    <span class="cancel">
+                                        <i class="fa fa-remove"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="Product Name">Estufa</td>
+                                <td data-label="Push Date">20/05/2020</td>
+                                <td data-label="State">In market</td>
+                                <td data-label="Action">
+                                    <span class="pay">
+                                        <i class='fab fa-cc-paypal'></i>
+                                    </span>
+                                    <span class="cancel">
+                                        <i class="fa fa-remove"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <div class="clear"></div>
+
+            <!-- The footer -->
+            <footer th:insert="fragments/footer.html :: footer"></footer>
+        </div>
+
+    </body>
+</html>

@@ -1,25 +1,27 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">`
     <head>
         <meta charset="UTF-8">
         <title>Upload product</title>
-        <link rel="stylesheet" th:href="@{/css/footer_style.css}"
-              href="/css/footer_style.css"
+        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
+              href="/assets/css/footer_style.css"
               type="text/css">
-        <link rel="stylesheet" th:href="@{/css/general.css}"
-              href="/css/general.css"
-              type="text/css">
-        <link rel="stylesheet"
-              href="css/index_header.css"
-              th:href="@{/css/index_header.css}"
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
+              href="/assets/css/general.css"
               type="text/css">
         <link rel="stylesheet"
-              href="css/upload_form.css"
-              th:href="@{/css/upload_form.css}"
+              href="/assets/css/index_header.css"
+              th:href="@{/assets/css/index_header.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="/assets/css/upload_form.css"
+              th:href="@{/assets/css/upload_form.css}"
               type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
+
         <script src='https://kit.fontawesome.com/a076d05399.js'
-                crossorigin='anonymous'></script>
+                crossorigin='anonymous'>
+        </script>
     </head>
     <body>
         <div class="page__wrapper">
@@ -89,11 +91,10 @@
 
                         <div class="product__photos__inner_container">
                             <div class="photo__wrapper">
-                                <label>
-                                    <input type="file" multiple="multiple">
-                                    </label>
-                                <span>Principal photo
-                                https://speckyboy.com/custom-file-upload-fields/</span>
+                                <div class="product__photos__placeholder" draggable="false">
+                                </div>
+
+                                <input type="file" id="uploadImg" name="img">
                             </div>
 
                         </div>
@@ -121,5 +122,6 @@
 
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
+        <script src="/assets/js/upload_img_form.js"></script>
     </body>
 </html>

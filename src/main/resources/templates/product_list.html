@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Products</title>
+        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
+              href="/assets/css/footer_style.css"
+              type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
+              href="/assets/css/general.css"
+              type="text/css">
+        <link rel="stylesheet"
+              href="/assets/css/index_header.css"
+              th:href="@{/assets/css/index_header.css}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="/assets/css/product_list.css"
+              th:href="@{/assets/css/product_list.css}"
+              type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'
+                crossorigin='anonymous'></script>
+    </head>
+    <body>
+        <div class="page__wrapper">
+            <!--The header-->
+            <header th:replace="fragments/header.html :: header"></header>
+
+            <main>
+                <div class="card">
+                    <a>
+                        <div class="card__image">
+                            <img src="/assets/img/estufa.webp" alt="product">
+
+                        </div>
+                        <div class="card__product__info">
+                            <span class="card__product__price">30 $</span>
+                            <span class="card__product__title">Product Name</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a>
+                        <div class="card__image">
+                            <img src="/assets/img/estufa.webp" alt="product">
+
+                        </div>
+                        <div class="card__product__info">
+                            <span class="card__product__price">30 $</span>
+                            <span class="card__product__title">Product Name</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a>
+                        <div class="card__image">
+                            <img src="/assets/img/estufa.webp" alt="product">
+
+                        </div>
+                        <div class="card__product__info">
+                            <span class="card__product__price">30 $</span>
+                            <span class="card__product__title">Product Name</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a>
+                        <div class="card__image">
+                            <img src="/assets/img/estufa.webp" alt="product">
+
+                        </div>
+                        <div class="card__product__info">
+                            <span class="card__product__price">30 $</span>
+                            <span class="card__product__title">Product Name</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a>
+                        <div class="card__image">
+                            <img src="/assets/img/estufa.webp" alt="product">
+
+                        </div>
+                        <div class="card__product__info">
+                            <span class="card__product__price">30 $</span>
+                            <span class="card__product__title">Product Name</span>
+                        </div>
+                    </a>
+                </div>
+            </main>
+
+            <div class="clear"></div>
+            <!-- The footer -->
+            <footer th:insert="fragments/footer.html :: footer"></footer>
+
+        </div>
+
+    </body>
+</html>
