@@ -22,45 +22,55 @@
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js'
                 crossorigin='anonymous'></script>
+        <!-- style sheet -->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/weGo_map.css" type="text/css">
+
+        <!--HERE JS libs-->
+        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     </head>
     <body>
-            <div class="page__wrapper">
-                <header th:replace="fragments/header.html :: header"></header>
+        <div class="page__wrapper">
+            <header th:replace="fragments/header.html :: header"></header>
 
-                <main>
-                    <div class="product__card">
-                        <div class="card__top__section">
-                            <h2>Product Name Eee</h2>
-                            <button class="push">Push</button>
-                        </div>
+            <main>
+                <div class="product__card">
+                    <div class="card__top__section">
+                        <h2>Product Name Eee</h2>
+                        <button class="push">Push</button>
+                    </div>
 
-                        <div class="product__image">
-                            <img src="/assets/img/auction.png" alt="Product">
-                        </div>
+                    <div class="product__image">
+                        <img src="/assets/img/auction.png" alt="Product">
+                    </div>
 
-                        <div class="card__bottom__section">
-                            <span class="price"> <b>36.35$</b> </span>
+                    <div class="card__bottom__section">
+                        <span class="price"> <b>36.35$</b> </span>
 
-                            <p class="description">Product description Product description Product description
-                                Product description Product description Product description
-                                Product description Product description Product description</p>
+                        <p class="description">Product description Product description Product description
+                            Product description Product description Product description
+                            Product description Product description Product description
+                        </p>
 
-                            <span class="publication__date">20-05-2022</span>
+                        <span class="publication__date">20-05-2022</span>
 
-                            <div class="product__location">
-                                <i style='font-size:24px' class='fas'>&#xf3c5;</i>
-                                <span>Palma de Mallorca</span>
-                                <div class="map__space">
-
-                                </div>
-                            </div>
+                        <div class="product__location">
+                            <i style='font-size:24px' class='fas'>&#xf3c5;</i>
+                            <span>Palma de Mallorca</span>
+                            <div class="map__wrapper" id="mapContainer" style="height: 200px"></div>
                         </div>
                     </div>
-                </main>
+                </div>
+            </main>
 
-                <div class="clear"></div>
+            <div class="clear"></div>
 
-                <footer th:insert="fragments/footer.html :: footer"></footer>
+            <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
+        <script src="/assets/js/map.js"></script>
     </body>
 </html>

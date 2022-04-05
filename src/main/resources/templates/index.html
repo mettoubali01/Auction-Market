@@ -41,13 +41,13 @@
                 <h2>What product are you interested in bidding on?</h2>
 
                 <div class="categories__container">
-                    <button class="left__button">
+                    <button class="left__button" onclick="prevSlide()">
                         <span><i class="fas fa-chevron-left"></i></span>
                     </button>
 
                     <div class="list__content">
-                        <ul>
-                            <li class="categories_list_item">
+                        <ul id="list">
+                            <li class="categories_list_item fade">
                                 <a>
                                     <div class="icon_item">
                                         <i class="material-icons">directions_bike</i>
@@ -56,7 +56,7 @@
                                 </a>
                             </li>
 
-                            <li class="categories_list_item">
+                            <li class="categories_list_item fade">
                                 <a>
                                     <div class="icon_item">
                                         <i class="material-icons">&#xe531;</i>
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
 
-                            <li class="categories_list_item">
+                            <li class="categories_list_item fade">
                                 <a>
                                     <div class="icon_item">
     <!--                                    <img alt="Bikes">-->
@@ -75,7 +75,7 @@
                                 </a>
                             </li>
 
-                            <li class="categories_list_item">
+                            <li class="categories_list_item fade">
                                 <a>
                                     <div class="icon_item">
                                         <i class="material-icons">&#xe532;</i>
@@ -84,7 +84,7 @@
                                 </a>
                             </li>
 
-                            <li class="categories_list_item">
+                            <li class="categories_list_item fade">
                                 <a>
                                     <div class="icon_item">
                                         <i class="material-icons">games</i>
@@ -92,9 +92,27 @@
                                     Games Console
                                 </a>
                             </li>
+
+                            <li class="categories_list_item fade">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">cancel</i>
+                                    </div>
+                                    Cancel
+                                </a>
+                            </li>
+
+                            <li class="categories_list_item fade">
+                                <a>
+                                    <div class="icon_item">
+                                        <i class="material-icons">plane</i>
+                                    </div>
+                                    Plane
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <button class="right__button">
+                    <button class="right__button" onclick="nextSlide()">
                         <span><i class="fas fa-chevron-right"></i></span>
                     </button>
                 </div>
@@ -133,5 +151,7 @@
             <!-- The footer -->
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
+        <script src="/assets/js/slider.js" type="text/javascript"></script>
+
     </body>
 </html>

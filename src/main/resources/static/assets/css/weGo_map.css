@@ -1,0 +1,73 @@
+/*map*/
+#mapContainer {
+    position: relative;
+}
+
+/*search location input and result*/
+.top__section__map{
+    position: absolute;
+    z-index: 3;
+}
+
+.dropdown__suggestion {
+    width: 100%;
+    border: rgb(15, 22, 33);
+    list-style: none;
+    top: 135px;
+}
+
+.inner__top__section{
+    position: relative;
+    padding-left: 17px;
+}
+
+#search__place{
+    font-size: 18px;
+    font-family: 'Allerta', Helvetica, Arial, sans-serif;
+    color: #495057;
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    margin-top: 7px;
+    border: 1px black solid;
+}
+
+#list {
+    list-style: none;
+    background-color: white;
+    padding: 0px;
+    margin-left: 17px;
+    width: 360px;
+}
+
+#list li{
+    padding: 12px;
+    display: list-item;
+    font-family: 'Allerta', Helvetica, Arial, sans-serif;
+    border-bottom: 1px black solid;
+}
+
+#list li:last-child{
+    border-bottom: none;
+}
+
+.selected__item {
+    background-color: #ecef;
+    transition: all .15s linear;
+    font-weight: bolder;
+}
+
+/*#list li:hover {*/
+/*    font-weight: bolder;*/
+/*}*/
+
+#list {
+    cursor: pointer;
+}
+
+.fa-search-custom {
+    right: 10px;
+    top: 17px;
+    z-index: 99999;
+    position: absolute;
+}

@@ -19,9 +19,25 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
 
+        <!-- style sheet -->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/weGo_map.css" type="text/css">
+
+        <!--HERE JS libs-->
+        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
         <script src='https://kit.fontawesome.com/a076d05399.js'
                 crossorigin='anonymous'>
         </script>
+
+        <style>
+
+        </style>
+
     </head>
     <body>
         <div class="page__wrapper">
@@ -104,8 +120,22 @@
                         <h2>Where you have the product</h2>
 
                         <div class="product__location__inner_container">
-                            <div class="map__wrapper">
-                                <span>WeGo Here</span>
+                            <div class="map__wrapper" id="mapContainer">
+                                <div class="top__section__map">
+                                    <div class="inner__top__section">
+                                        <input placeholder="Search for a Place or an Address."
+                                               type="text"
+                                               name="search"
+                                               id="search__place"
+                                               value="Alaior, Menorca"
+                                               autocomplete="on"
+                                               onkeyup="GeoCodeAutoSuggest(this)"/>
+                                        <i class="fa fa-search fa-search-custom" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dropdown__suggestion">
+                                        <ul id="list"></ul>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -123,5 +153,7 @@
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
         <script src="/assets/js/upload_img_form.js"></script>
+        <script src="/assets/js/map.js"></script>
+        <script src="/assets/js/wego_here_map.js"></script>
     </body>
 </html>

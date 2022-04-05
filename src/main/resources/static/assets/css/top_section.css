@@ -25,6 +25,7 @@
 .categories__container{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 32px auto;
     width: 799px;
     height: 150px;
@@ -33,6 +34,7 @@
 
 /*The list of categories*/
 .list__content li{
+    display: none;
     width: 130px;
     list-style: none;
     padding: 0;
@@ -77,6 +79,30 @@
     cursor: pointer;
     border-radius: 20px;
     background-color: #fff;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
 .right__button:hover, .left__button:hover{
