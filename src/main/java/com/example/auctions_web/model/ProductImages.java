@@ -1,12 +1,21 @@
-package com.example.auctions_web.beans;
+package com.example.auctions_web.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 public class ProductImages {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @JsonIgnore
+    private UUID id;
     private String name;
     private byte[] content;
     @ManyToOne
@@ -16,11 +25,11 @@ public class ProductImages {
     public ProductImages() {
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID  id) {
         this.id = id;
     }
 

@@ -2,89 +2,132 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <link rel="stylesheet" th:href="@{/assets/css/footerr.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/header.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/product_list.css}" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script th:src='@{https://kit.fontawesome.com/a076d05399.js}' crossorigin='anonymous'></script>
         <title>Products</title>
-        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
-              href="/assets/css/footer_style.css"
-              type="text/css">
-        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
-              href="/assets/css/general.css"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/index_header.css"
-              th:href="@{/assets/css/index_header.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/product_list.css"
-              th:href="@{/assets/css/product_list.css}"
-              type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-              rel="stylesheet">
-        <script src='https://kit.fontawesome.com/a076d05399.js'
-                crossorigin='anonymous'></script>
+
     </head>
     <body>
+        <noscript>You need to enable JavaScript to run this web.</noscript>
         <div class="page__wrapper">
             <!--The header-->
             <header th:replace="fragments/header.html :: header"></header>
-
             <main>
+                <!-- Modal to remove product-->
+                <dialog class="delete__popup__container modal" id="modal">
+                    <span>Are your sure you want to delete the product?</span>
+                    <div class="delete__popup__remove">
+                        <button id="cancel">Cancel</button>
+                        <button id="remove">Remove</button>
+                    </div>
+                </dialog>
+
                 <div class="card">
                     <a>
                         <div class="card__image">
-                            <img src="/assets/img/estufa.webp" alt="product">
+                            <img th:src="@{/assets/img/estufa.webp}" alt="product">
 
                         </div>
                         <div class="card__product__info">
                             <span class="card__product__price">30 $</span>
                             <span class="card__product__title">Product Name</span>
+                            <p class="card__product__description">
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and...
+                            </p>
+                            <div class="admin__conf__section">
+                                <button class="update__product">Update product</button>
+                                <button class="remove__product">Remove product</button>
+                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="card">
                     <a>
                         <div class="card__image">
-                            <img src="/assets/img/estufa.webp" alt="product">
+                            <img th:src="@{/assets/img/estufa.webp}" alt="product">
 
                         </div>
                         <div class="card__product__info">
                             <span class="card__product__price">30 $</span>
                             <span class="card__product__title">Product Name</span>
+                            <p class="card__product__description">
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and...
+                            </p>
+                            <div class="admin__conf__section">
+                                <button class="update__product">Update product</button>
+                                <button class="remove__product">Remove product</button>
+                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="card">
                     <a>
                         <div class="card__image">
-                            <img src="/assets/img/estufa.webp" alt="product">
+                            <img th:src="@{/assets/img/estufa.webp}" alt="product">
 
                         </div>
                         <div class="card__product__info">
                             <span class="card__product__price">30 $</span>
                             <span class="card__product__title">Product Name</span>
+                            <p class="card__product__description">
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and...
+                            </p>
+                            <div class="admin__conf__section">
+                                <button class="update__product">Update product</button>
+                                <button class="remove__product">Remove product</button>
+                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="card">
                     <a>
                         <div class="card__image">
-                            <img src="/assets/img/estufa.webp" alt="product">
+                            <img th:src="@{/assets/img/estufa.webp}" alt="product">
 
                         </div>
                         <div class="card__product__info">
                             <span class="card__product__price">30 $</span>
                             <span class="card__product__title">Product Name</span>
+                            <p class="card__product__description">
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and...
+                            </p>
+                            <div class="admin__conf__section">
+                                <button class="update__product">Update product</button>
+                                <button class="remove__product">Remove product</button>
+                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="card">
                     <a>
                         <div class="card__image">
-                            <img src="/assets/img/estufa.webp" alt="product">
+                            <img th:src="@{/assets/img/estufa.webp}" alt="product">
 
                         </div>
                         <div class="card__product__info">
                             <span class="card__product__price">30 $</span>
                             <span class="card__product__title">Product Name</span>
+                            <p class="card__product__description">
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and
+                                This product is made with care and This product is made with care and...
+                            </p>
+                            <div class="admin__conf__section">
+                                <button class="update__product">Update product</button>
+                                <button class="remove__product">Remove product</button>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -93,8 +136,7 @@
             <div class="clear"></div>
             <!-- The footer -->
             <footer th:insert="fragments/footer.html :: footer"></footer>
-
         </div>
-
+        <script th:src="@{/assets/js/delete_product_modal.js}"></script>
     </body>
 </html>

@@ -1,0 +1,34 @@
+#toast__container{
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 15;
+}
+
+.toast{
+    width: 300px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    color: #ffffff;
+    font-weight: 900;
+    margin: .5rem;
+    border-radius: 5px;
+}
+
+.error{
+    background-color: #ff5252;
+}
+
+.success{
+    background-color: #4caf50;
+}
+
+.toast span{
+    margin: 0 12px 0 0;
+    font-size: 1.5rem;
+}

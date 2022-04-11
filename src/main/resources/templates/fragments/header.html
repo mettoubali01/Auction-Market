@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
     <head>
         <meta charset="UTF-8">
     </head>
-    <body>
 
+    <body>
         <header class="main__header" th:fragment="header">
             <a class="main__header__logo">
-                <img src="/assets/img/auction.PNG" th:src="@{/assets/img/auction.PNG}" class="web__logo" alt="website logo">
+                <img th:src="@{/assets/img/auction.PNG}" class="web__logo" alt="website logo">
             </a>
             <div class="search__bar">
                 <form class="search" method="get" action="">
@@ -25,29 +27,33 @@
 
             <div class="conf__section">
 
-                <a class="login__register__btn">
+                <a sec:authorize="isAnonymous()" class="login__register__btn" th:href="@{/oauth2/authorization/google}">
                     <span>Login or Sign up</span>
                 </a>
 
-                <button class="upload__btn">
-                    <i class="material-icons">add_circle_outline</i>
-                    Upload product
-                </button>
+                <a sec:authorize="isAuthenticated()" id="upload__btn" th:href="@{/add/product}">
+                    <i class="fas fa-plus"></i>
+                    Upload Product
+                </a>
 
-                <div class="dropdown">
+                <div sec:authorize="isAuthenticated()" class="dropdown">
                     <button class="more__info__dropdwn">
-                        <i class="material-icons">person_outline</i>
-                        Username
+                        <i class="far fa-customer-circle"></i>
+                        <span sec:authentication="principal.fullName"></span>
                         <i class="fa fa-caret-down"></i>
                     </button>
 
                     <div class="dropdown__content">
                         <a href="#">Pushes</a>
-                        <a href="#">Logout</a>
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" sec:authorize="isAuthenticated()" th:href="@{/logout}">
+                                <span> Logout</span>
+                            </button>
+                        </form>
+                        <a th:href="@{/logout}">Logout</a>
                     </div>
                 </div>
             </div>
         </header>
-
     </body>
 </html>

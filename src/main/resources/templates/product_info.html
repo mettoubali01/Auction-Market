@@ -2,38 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Product Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
-              href="/assets/css/footer_style.css"
-              type="text/css">
-        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
-              href="/assets/css/general.css"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/index_header.css"
-              th:href="@{/assets/css/index_header.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/product_info.css"
-              th:href="@{/assets/css/product_info.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src='https://kit.fontawesome.com/a076d05399.js'
-                crossorigin='anonymous'></script>
-        <!-- style sheet -->
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/weGo_map.css" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/footerr.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/header.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/product_info.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+        <link rel="stylesheet" th:href="@{/assets/css/weGo_map.css}" type="text/css">
 
         <!--HERE JS libs-->
-        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{https://js.api.here.com/v3/3.1/mapsjs-ui.css}"/>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-core.js}"></script>
+        <script th:src='@{https://kit.fontawesome.com/a076d05399.js}' crossorigin='anonymous'></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-service.js}"></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-ui.js}"></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-mapevents.js}"></script>
+
+        <title>Product Details</title>
+
     </head>
     <body>
+        <noscript>You need to enable JavaScript to run this web.</noscript>
+
         <div class="page__wrapper">
             <header th:replace="fragments/header.html :: header"></header>
 
@@ -44,8 +34,8 @@
                         <button class="push">Push</button>
                     </div>
 
-                    <div class="product__image">
-                        <img src="/assets/img/auction.png" alt="Product">
+                    <div class="card__middle__section__image">
+                        <img th:src="@{/assets/img/auction.png}" alt="Product">
                     </div>
 
                     <div class="card__bottom__section">
@@ -59,9 +49,9 @@
                         <span class="publication__date">20-05-2022</span>
 
                         <div class="product__location">
-                            <i style='font-size:24px' class='fas'>&#xf3c5;</i>
+                            <i class='fas'>&#xf3c5;</i>
                             <span>Palma de Mallorca</span>
-                            <div class="map__wrapper" id="mapContainer" style="height: 200px"></div>
+                            <div class="map__wrapper" id="mapContainer"></div>
                         </div>
                     </div>
                 </div>
@@ -71,6 +61,6 @@
 
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
-        <script src="/assets/js/map.js"></script>
+        <script th:src="@{/assets/js/map.js}"></script>
     </body>
 </html>

@@ -19,5 +19,5 @@ html, body{
 /*div btw the main and the footer*/
 .clear {
     clear: both;
-    height: 300px; /*220*/
+    height: 220px; /*220*/
 }

@@ -1,31 +1,41 @@
-package com.example.auctions_web.beans;
+package com.example.auctions_web.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private String email;
     private String name;
     private String surname;
-    private String email;
     private String password;
-    private String nif;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "customer", targetEntity = Push.class)
     private List<Push> pushes = new ArrayList<>();
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinTable(
+
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "email", referencedColumnName = "email"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "roleName"))
+    @JsonIgnore
+    private Set<Role> roles = new HashSet<>();
+
     public Customer() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -60,14 +70,6 @@ public class Customer {
         this.password = password;
     }
 
-    public String getNif() {
-        return nif;
-    }
-
-    public void setNif(String nif) {
-        this.nif = nif;
-    }
-
     public List<Push> getPushes() {
         return pushes;
     }
@@ -76,15 +78,21 @@ public class Customer {
         this.pushes = pushes;
     }
 
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", nif='" + nif + '\'' +
                 '}';
     }
 }

@@ -38,18 +38,18 @@ main {
 }
 
 /*the image of the product*/
-.product__image {
+.card__middle__section__image {
     height: 450px;
     margin-bottom: 10px;
 }
 
-.product__image:after {
+.card__middle__section__image:after {
     content: '';
     display: block;
     border: 1px #CCC solid;
 }
 
-.product__image img {
+.card__middle__section__image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -85,8 +85,12 @@ main {
 }
 
 /*map section*/
-.map__space {
+.product__location .map__wrapper{
     margin-top: 10px;
     border: 1px solid black;
-    height: 100px;
+    height: 200px
+}
+
+.product__location .fas{
+    font-size:24px
 }

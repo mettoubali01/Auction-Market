@@ -1,6 +1,6 @@
 package com.example.auctions_web.service;
 
-import com.example.auctions_web.beans.Product;
+import com.example.auctions_web.model.Product;
 
 import java.util.List;
 

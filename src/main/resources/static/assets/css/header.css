@@ -42,7 +42,6 @@
     width: 100%;
 }
 
-
 .Search__icon{
     left: 10px;
     width: 28px;
@@ -61,7 +60,7 @@
 }
 
 /*Upload button*/
-.upload__btn{
+.conf__section #upload__btn{
     display: flex;
     align-self: center;
     align-items: center;
@@ -75,14 +74,15 @@
     margin-left: 8px;
     cursor: pointer;
     border: #13C1AC;
+    text-decoration: none;
 }
 
-.upload__btn:hover{
+.conf__section #upload__btn:hover{
     background-color: #058f7f;
 
 }
 
-.upload__btn i {
+.conf__section #upload__btn i {
     margin-right: 8px;
 }
 

@@ -1,4 +1,4 @@
-package com.example.auctions_web.beans;
+package com.example.auctions_web.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,8 +13,7 @@ public class ProductCategory {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "productCategory", targetEntity = Product.class)
     private List<Product> products = new ArrayList<>();
 
-    public ProductCategory() {
-    }
+    public ProductCategory() {}
 
     public String getName() {
         return name;

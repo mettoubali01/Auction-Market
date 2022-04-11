@@ -11,7 +11,7 @@ footer{
     display: flex;
     gap: 25px;
     justify-content: space-around;
-    height: 200px;
+    height: 100px;
     /*100*/
 }
 

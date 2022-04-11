@@ -1,15 +1,17 @@
-main{
+main {
     max-width: 100%;
     width: 1050px;
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
-.card{
+.card {
     flex: 1 0 33.33%;
     padding: 0 10px 0 10px;
     margin-bottom: 10px;
+    align-items: stretch;
 }
 
 .card a {
@@ -20,17 +22,19 @@ main{
     box-shadow: 0 0 0 1px #ECEFF1;
     color: #253238;
     text-decoration: none;
-    transition: all .15s ease
+    transition: all .15s ease;
 }
 
-.card .card__image img{
+.card .card__image img {
     width: 100%;
     max-width: 100%;
 }
 
-.card__product__info{
+.card__product__info {
     display: flex;
     flex-direction: column;
+    height: 30vh;
+    justify-content: space-evenly;
 }
 
 .card a:hover {
@@ -39,8 +43,91 @@ main{
     overflow: hidden
 }
 
-.card__product__info .card__product__price{
+.card__product__info .card__product__price {
     font-size: 2.25rem;
     line-height: normal;
     font-weight: 700;
+}
+
+.card__product__price, .card__product__title,
+.card__product__description {
+    margin-bottom: 10px;
+}
+
+.card__product__description {
+    flex: 1;
+}
+
+.admin__conf__section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.update__product {
+    background-color: dodgerblue;
+}
+
+.remove__product {
+    background-color: red;
+}
+
+.update__product, .remove__product {
+    color: #fff;
+    padding: 5px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*delete popup*/
+.delete__popup__container {
+    border: 1px black solid;
+    max-width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 99999;
+    top: 50%;
+    margin: 0 auto;
+}
+
+.delete__popup__container::backdrop {
+    background: rgb(0 0 0 / 0.4);
+}
+
+.delete__popup__container div{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.delete__popup__remove {
+    display: inline-block;
+}
+
+.delete__popup__remove #remove {
+    background-color: red;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.delete__popup__remove #remove:hover {
+    color: red;
+    background-color: #ffffff;
+    border: 1px red solid;
+}
+
+.delete__popup__remove #cancel {
+    border: 1px black solid;
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.delete__popup__remove #cancel:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.delete__popup__remove #remove, .delete__popup__remove #cancel {
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
 }

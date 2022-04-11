@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://thymeleaf.org"
+      xmlns:sec = "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Home</title>
-
-        <link rel="stylesheet"
-              href="/assets/css/index_header.css"
-              th:href="@{/assets/css/index_header.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/top_section.css"
-              th:href="@{/assets/css/top_section.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/general.css"
-              th:href="@{/assets/css/general.css}"
-              type="text/css">
-        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
-              href="/assets/css/footer_style.css"
-              type="text/css">
-        <link rel="stylesheet" th:href="@{/assets/css/index.css}"
-              href="/assets/css/index.css"
-              type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" th:href="@{/assets/css/header.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/top_section.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/footerr.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/index.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/toast.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src='https://kit.fontawesome.com/a076d05399.js'
-                crossorigin='anonymous'></script>
+        <script th:src='@{https://kit.fontawesome.com/a076d05399.js}' crossorigin='anonymous'></script>
+
+        <title th:text="${title}"></title>
+
     </head>
 
     <body>
+        <noscript>You need to enable JavaScript to run this web.</noscript>
         <div class="page__wrapper">
+            <!--toast to show msg warning-->
+            <div id="toast__container"></div>
 
             <!--The header-->
             <header th:replace="fragments/header.html :: header"></header>
@@ -119,27 +112,31 @@
             </section>
 
             <main>
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">You have been logged out.</div>
+                </div>
+
                 <h2>Check Our surprises</h2>
                 <p>Wou will find your objects and much more</p>
 
                 <div class="categories__wrapper">
                     <div class="category__card">
                         <a href="#">
-                            <img src="/assets/img/auction.png" alt="category image">
+                            <img th:src="@{/assets/img/auction.png}" alt="category image">
                             <h3>Category name</h3>
                             <span>10.956 products</span>
                         </a>
                     </div>
                     <div class="category__card">
                         <a href="#">
-                            <img src="/assets/img/auction.png" alt="category image">
+                            <img th:src="@{/assets/img/auction.png}" alt="category image">
                             <h3>Category name</h3>
                             <span>10.956 products</span>
                         </a>
                     </div>
                     <div class="category__card">
                         <a href="#">
-                            <img src="/assets/img/auction.png" alt="category image">
+                            <img th:src="@{/assets/img/auction.png}" alt="category image">
                             <h3>Category name</h3>
                             <span>10.956 products</span>
                         </a>
@@ -151,7 +148,10 @@
             <!-- The footer -->
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
-        <script src="/assets/js/slider.js" type="text/javascript"></script>
-
+        <script>
+            let notifType = "[[${msg}]]";
+        </script>
+        <script th:src="@{/assets/js/slider.js}" type="text/javascript"></script>
+        <script th:src="@{/assets/js/toast.js}" type="text/javascript"></script>
     </body>
 </html>

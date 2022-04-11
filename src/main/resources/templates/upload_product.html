@@ -1,51 +1,41 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="en">`
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec = "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Upload product</title>
-        <link rel="stylesheet" th:href="@{/assets/css/footer_style.css}"
-              href="/assets/css/footer_style.css"
-              type="text/css">
-        <link rel="stylesheet" th:href="@{/assets/css/general.css}"
-              href="/assets/css/general.css"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/index_header.css"
-              th:href="@{/assets/css/index_header.css}"
-              type="text/css">
-        <link rel="stylesheet"
-              href="/assets/css/upload_form.css"
-              th:href="@{/assets/css/upload_form.css}"
-              type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-              rel="stylesheet">
-
-        <!-- style sheet -->
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/weGo_map.css" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/footerr.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/general.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/header.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/assets/css/upload_form.css}" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <link th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/assets/css/weGo_map.css}" type="text/css">
 
         <!--HERE JS libs-->
-        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{https://js.api.here.com/v3/3.1/mapsjs-ui.css}"/>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-core.js}"></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-service.js}"></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-ui.js}"></script>
+        <script type="text/javascript" th:src="@{https://js.api.here.com/v3/3.1/mapsjs-mapevents.js}"></script>
+        <script th:src='@{https://kit.fontawesome.com/a076d05399.js}' crossorigin='anonymous'></script>
 
-        <script src='https://kit.fontawesome.com/a076d05399.js'
-                crossorigin='anonymous'>
-        </script>
-
-        <style>
-
-        </style>
+        <title>Upload product</title>
 
     </head>
     <body>
+        <noscript>You need to enable JavaScript to run this web.</noscript>
         <div class="page__wrapper">
 
             <header th:replace="fragments/header.html :: header"></header>
 
             <main>
-                <form class="upload__product__form">
+                <form class="upload__product__form"
+                      action="#"
+                      th:action="@{/upload}"
+                      th:object="${productUploadDto}"
+                      method="post"
+                      enctype="multipart/form-data">
+
                     <div class="category__pro__selection">
                         <h2>What will you upload?</h2>
                     </div>
@@ -61,14 +51,22 @@
                                        name="title"
                                        type="text"
                                        placeholder="In few words"
-                                       maxlength="100">
+                                       maxlength="100"
+                                       th:field="*{title}"
+                                       th:classappend="${#fields.hasErrors('title')} ? 'alert__border': ''">
+                                <div class="alert alert__warning" th:errors="*{title}"></div>
+
                             </div>
 
                             <div class="maxDateForPushing__input__inner_container">
                                 <label for="maxDate">Pushes Until</label>
                                 <input name="maxDate"
                                        type="date"
-                                       id="maxDate">
+                                       id="maxDate"
+                                       th:field="*{pushesUntil}"
+                                       th:classappend="${#fields.hasErrors('pushesUntil')} ? 'alert__border': ''">
+                                <div class="alert alert__warning" th:errors="*{pushesUntil}"></div>
+
                             </div>
 
                             <div class="price__input__inner_container">
@@ -78,7 +76,10 @@
                                        min="0"
                                        max="999999999"
                                        placeholder="Final price in Euro"
-                                       id="price">
+                                       id="price"
+                                       th:field="*{price}"
+                                       th:classappend="${#fields.hasErrors('price')} ? 'alert__border': ''">
+                                <div class="alert alert__warning" th:errors="*{price}"></div>
                             </div>
 
                             <div class="prepaid__input__inner_container">
@@ -88,17 +89,24 @@
                                        min="0"
                                        max="999999999"
                                        placeholder="Pre-paid price in Euro"
-                                       id="prepaid">
+                                       id="prepaid"
+                                       th:field="*{prePaid}"
+                                       th:classappend="${#fields.hasErrors('prePaid')} ? 'alert__border': ''">
+                                <div class="alert alert__warning" th:errors="*{prePaid}"></div>
                             </div>
 
                             <div class="description__input__inner_container">
                                 <label for="description">Description</label>
                                 <span class="chars__counter">0/1000</span>
-                                <textarea name="Description"
-                                          maxlength="000"
+                                <textarea name="description"
+                                          maxlength="1000"
                                           placeholder="Describe your product..."
-                                          id="description"></textarea>
+                                          id="description"
+                                          th:field="*{description}"
+                                          th:classappend="${#fields.hasErrors('description')} ? 'alert__border': ''"></textarea>
                             </div>
+                            <div class="alert alert__warning" th:errors="*{description}"></div>
+
                         </div>
                     </div>
 
@@ -110,8 +118,13 @@
                                 <div class="product__photos__placeholder" draggable="false">
                                 </div>
 
-                                <input type="file" id="uploadImg" name="img">
+                                <input type="file"
+                                       id="uploadImg"
+                                       name="image"
+                                       th:field="*{image}"
+                                       th:classappend="${#fields.hasErrors('image')} ? 'alert__border': ''">
                             </div>
+                            <div class="alert alert__warning" th:errors="*{image}"></div>
 
                         </div>
                     </div>
@@ -140,7 +153,7 @@
 
                         </div>
                     </div>
-                    <div class="submit__btn">
+                    <div class="submit__product__btn">
                         <button type="submit">
                             Upload product
                         </button>
@@ -152,8 +165,8 @@
 
             <footer th:insert="fragments/footer.html :: footer"></footer>
         </div>
-        <script src="/assets/js/upload_img_form.js"></script>
-        <script src="/assets/js/map.js"></script>
-        <script src="/assets/js/wego_here_map.js"></script>
+        <script th:src="@{assets/js/upload_form.js}"></script>
+        <script th:src="@{/assets/js/map.js}"></script>
+        <script th:src="@{/assets/js/wego_here_map.js}"></script>
     </body>
 </html>

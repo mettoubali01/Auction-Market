@@ -1,8 +1,7 @@
 package com.example.auctions_web.service;
 
 
-import com.example.auctions_web.beans.Product;
-import com.example.auctions_web.beans.ProductCategory;
+import com.example.auctions_web.model.ProductCategory;
 
 import java.util.List;
 

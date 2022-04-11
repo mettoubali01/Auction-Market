@@ -1,19 +1,28 @@
-package com.example.auctions_web.beans;
+package com.example.auctions_web.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 public class Push {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @JsonIgnore
+    private UUID id;
     @ManyToOne
     @JoinColumn(nullable = false, name = "product_fk")
     private Product product;
     @ManyToOne
-    @JoinColumn(nullable = false, name = "customer_fk")
+    @JoinColumn(nullable = false, name = "user_fk")
     private Customer customer;
 
     private double pushPrice;
@@ -23,11 +32,11 @@ public class Push {
     public Push() {
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

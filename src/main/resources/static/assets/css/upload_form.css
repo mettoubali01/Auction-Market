@@ -16,6 +16,7 @@ h2 {
 /*the titles of the input*/
 label {
     display: inline-block;
+    margin-bottom: 5px;
 }
 
 /*The common style for most of the sections*/
@@ -99,8 +100,15 @@ textarea {
     background-size: cover;
 }
 
+/*map section*/
+.product__location__inner_container .map__wrapper{
+    margin-top: 10px;
+    border: 1px solid black;
+    height: 250px
+}
+
 /*submit btn*/
-.submit__btn button {
+.submit__product__btn button {
     padding: 10px 30px;
     background-color: #13C1AC;
     color: #fff;
@@ -111,7 +119,26 @@ textarea {
     border-color: #13C1AC;
 }
 
-.submit__btn button:hover {
+.submit__product__btn button:hover {
     background-color: #058f7f;
     border-color: #13C1AC;
+}
+
+/*msg errors*/
+.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.alert__warning{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert__border{
+    border: 2px #ebccd1 solid;
 }

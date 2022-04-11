@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link th:href="@{/assets/css/error.css}" rel="stylesheet">
+
+        <title>Error</title>
+    </head>
+    <body>
+        <div class="error__container">
+            <img th:src="@{/assets/img/auction.PNG}" class="web__logo" alt="website logo">
+
+            <p>You've been close, but what are you looking for is not here...</p>
+            <a th:href="@{/}">Go home</a>
+        </div>
+    </body>
+</html>
